@@ -1,0 +1,24 @@
+$headerImage: url(../img/m-h-night.jpg);
+$header_font: 'Hind', sans-serif;
+$text_font: 'Fresca', sans-serif;
+$third_font: 'Source Sans Pro', sans-serif;
+$font-weights: (
+  'regular': 400,
+  'medium': 600,
+  'bold': 700,
+);
+
+$colors: (
+  'span': #7d4136,
+  'cards': #21242e,
+  'wrapper': #3c4050,
+  'btn': hsla(12, 93%, 11%, 0.688),
+  'banner': linear-gradient(80deg, #c1c1c1 0%, #321b07 70%),
+  'btn_hover': rgb(27, 40, 1),
+  'bg_color': #21242e,
+  'header_span': rgb(255, 255, 255),
+  'primary_color': rgb(255, 255, 255),
+  'sec_text_title': rgb(255, 255, 255),
+  'header_title': rgb(255, 255, 255),
+  'second_color': #a7a7a7,
+);

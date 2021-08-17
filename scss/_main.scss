@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@mixin flex_sb {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin buttons {
+  background-color: map-get($colors, 'btn');
+  color: map-get($colors, 'primary_color');
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none;
+  font-family: $third_font;
+  font-weight: map-get($font-weights, medium);
+  padding: 0.7rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+@mixin btns_hover {
+  transition: 1s ease-in-out;
+  background-color: map-get($colors, 'btn_hover');
+  outline: none;
+}
+
+@mixin links {
+  font-family: $header_font;
+  font-weight: map-get($font-weights, medium);
+  color: map-get($colors, 'second_color');
+}
+
+body {
+  background-color: map-get($colors, 'bg_color');
+}
+
+@font-face {
+  font-family: 'Hiking';
+  src: url('../font/Herkingsdemo.otf');
+}
+header {
+  background: $headerImage;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 70vh;
+  border-radius: 0 0 40% 0;
+  color: map-get($colors, 'header_title');
+
+  .header-wrap {
+    @include flex_sb;
+    flex-direction: column;
+    max-width: 600px;
+    height: 80%;
+    margin-left: 10rem;
+
+    .header_button {
+      @include buttons;
+    }
+
+    .header_button:hover {
+      @include btns_hover;
+    }
+
+    .login {
+      @include links;
+      color: map-get($colors, 'primary_color');
+      margin-right: 8rem;
+    }
+
+    .header_text {
+      font-family: $text_font;
+      font-weight: map-get($font-weights, regular);
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .header_heading {
+      font-size: 4rem;
+      font-family: $third_font;
+      font-weight: map-get($font-weights, bold);
+      line-height: 1;
+
+      .header_span {
+        background-color: map-get($colors, 'span');
+        color: map-get($colors, 'header_span');
+        display: inline-block;
+      }
+    }
+
+    .landing-logo {
+      display: flex;
+      margin-top: 0.5rem;
+
+      img {
+        margin-right: 1rem;
+        width: 4rem;
+      }
+
+      p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: $header_font;
+        font-weight: map-get($font-weights, bold);
+        font-size: 1.5rem;
+        line-height: 1;
+        font-family: 'Hiking';
+
+        span {
+          font-size: 5px;
+          display: block;
+          font-family: 'Hiking';
+        }
+      }
+    }
+
+    div:nth-child(4) {
+      @include flex_sb;
+      align-items: center;
+    }
+  }
+}
+
+.section {
+  width: 100%;
+
+  &_text {
+    margin: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    color: map-get($colors, 'sec_text_title');
+    font-family: $header_font;
+    font-weight: map-get($font-weights, medium);
+
+    .section_span {
+      background-color: map-get($colors, 'span');
+      color: map-get($colors, 'primary_color');
+      font-size: 2rem;
+      display: inline-block;
+      padding-top: 0.5rem;
+    }
+  }
+
+  &_card_wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    .section_card {
+      display: flex;
+      padding: 1rem;
+      margin: 1rem;
+      background-color: map-get($colors, 'wrapper');
+
+      .section_card_img {
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .section_card_right_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 4rem;
+
+        .section_card_heading {
+          text-align: center;
+          color: map-get($colors, 'primary_color');
+          font-size: 1.5rem;
+        }
+
+        .section_card_text {
+          align-self: center;
+          color: map-get($colors, 'primary_color');
+          font-size: 1rem;
+          font-weight: normal;
+          color: map-get($colors, 'second_color');
+          font-family: $header_font;
+          font-weight: map-get($font-weights, medium);
+        }
+
+        .section_link {
+          @include links;
+        }
+      }
+    }
+  }
+
+  .section_banner {
+    width: 1150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 5rem auto 0 auto;
+    background-image: map-get($colors, 'banner');
+    transform: translateY(50%);
+    font-family: $header_font;
+    font-weight: map-get($font-weights, medium);
+
+    &_text {
+      color: map-get($colors, 'sec_text_title');
+    }
+
+    &_text_wrap {
+      color: map-get($colors, 'primary_color');
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    &_heading {
+      color: map-get($colors, 'primary_color');
+      font-size: 1.5rem;
+      margin: 1rem 0;
+
+      .section_btn_span {
+        background-color: map-get($colors, 'span');
+        display: inline-block;
+        padding-top: 0.5rem;
+      }
+    }
+
+    .section_banner_button {
+      @include buttons;
+    }
+
+    .section_banner_button:hover {
+      @include btns_hover;
+    }
+  }
+}
+
+.footer {
+  background-color: map-get($colors, 'wrapper');
+  padding: 3rem;
+  display: flex;
+  color: map-get($colors, 'primary_color');
+  flex-direction: column;
+  padding-top: 8rem;
+
+  .footer-wrap {
+    @include flex_sb;
+    width: 100%;
+    color: map-get($colors, 'primary_color');
+
+    .footer_text {
+      max-width: 300px;
+      color: map-get($colors, 'second_color');
+    }
+  }
+
+  .footer_logo {
+    @extend .landing-logo;
+    color: map-get($colors, 'second_color');
+    display: flex;
+    margin-top: 1rem;
+
+    img {
+      margin-right: 1rem;
+      width: 3rem;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: $header_font;
+      font-weight: map-get($font-weights, bold);
+      font-size: 1.5rem;
+      line-height: 1;
+      font-family: 'Hiking';
+
+      span {
+        font-size: 5px;
+        display: block;
+        font-family: 'Hiking';
+      }
+    }
+  }
+
+  .footer-cr {
+    color: map-get($colors, 'second_color');
+  }
+}
+
+@media screen and (max-width: 932px) {
+  body {
+    background-color: rgb(79, 8, 8);
+  }
+  header {
+    height: 400px;
+    border-radius: 0%;
+    .header-wrap {
+      height: 30%;
+      display: inline;
+      align-items: center;
+      .header_button {
+        background-color: rgba(104, 16, 6, 0.297);
+        padding: 0.3rem 1rem;
+        font-size: 0.5rem;
+        border-radius: 50%;
+        margin-left: 2rem;
+      }
+      .landing-logo {
+        margin-left: 3rem;
+        img {
+          margin-right: 1rem;
+        }
+      }
+      a {
+        background-color: rgba(53, 13, 4, 0.352);
+        font-size: 1rem;
+      }
+      .btn {
+        // margin-top: 20rem;
+        // margin-left: -25rem;
+        margin-top: 3rem;
+      }
+      .login {
+        height: 1rem;
+        font-size: 0.5rem;
+      }
+    }
+    .header_text {
+      display: none;
+    }
+
+    .header_heading {
+      font-size: 2rem !important;
+      margin-top: 2rem;
+      text-align: center;
+    }
+  }
+
+  .section {
+    .section_card {
+      flex-direction: column;
+    }
+    .section_card_heading {
+      background-color: rgba(105, 3, 3, 0.208);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .section_banner {
+      width: 100%;
+      &_text {
+        margin-left: 1rem;
+      }
+      &_heading {
+        font-size: 1rem;
+        text-transform: uppercase;
+        margin-left: 1rem;
+      }
+      .section_banner_button {
+        font-size: 1rem;
+        margin-top: 3.5rem;
+        margin-right: 1rem;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  footer {
+    .footer_logo {
+      margin-right: 0.2rem;
+      flex-direction: column;
+    }
+    .footer_text {
+      max-width: 100px;
+      margin: 1rem;
+      line-height: 110%;
+    }
+    .footer-cr {
+      max-width: 100px;
+      margin: 1rem;
+      padding: 2rem;
+      font-style: italic;
+      word-spacing: 3rem;
+      line-height: 180%;
+    }
+    .footer_logo {
+      p {
+        margin-top: 0.3rem;
+        margin-right: 1rem;
+      }
+      span {
+        margin-top: 0.3rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

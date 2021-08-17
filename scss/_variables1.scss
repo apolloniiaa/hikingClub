@@ -1,0 +1,25 @@
+$headerImage: url(../img/m-h-day.jpg); 
+$header_font: 'Hind', sans-serif;
+$text_font: 'Fresca', sans-serif;
+$third_font:'Source Sans Pro', sans-serif;
+$font-weights: (
+    "regular": 400,
+    "medium": 600,
+    "bold": 700,
+);
+
+$colors: (
+      "span":#14A1C7,
+      "btn_hover":#1b2801,
+      "cards":#21242E,
+      "wrapper":#21242E,
+      "footer": #21242E,
+      "sec_text_title":#2D303C,
+      "header_title":#2D303C,
+      "bg_color":#ffffff,
+      "primary_color":#ffffff,
+      "btn": #76c400,
+      "second_color":#a7a7a7,
+      "banner": linear-gradient(80deg, #499124 0%, #2b5a9b 70%),
+      "header_span":#2D303C,
+);
